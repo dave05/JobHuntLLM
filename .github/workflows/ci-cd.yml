@@ -27,7 +27,7 @@ jobs:
         pip install -e .
     - name: Test with pytest
       run: |
-        pytest --cov=jobhuntgpt tests/
+        python -m pytest --cov=jobhuntgpt tests/ -v
 
   build-backend:
     needs: test
