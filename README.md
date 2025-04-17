@@ -2,6 +2,8 @@
 
 An LLM-powered job search assistant that helps you find, apply for, and track job opportunities.
 
+[![JobHuntGPT CI/CD](https://github.com/dave05/JobHuntLLM/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/dave05/JobHuntLLM/actions/workflows/ci-cd.yml)
+
 ## Features
 
 - **Resume Parsing**: Extract skills, experience, and education from your resume
@@ -10,6 +12,8 @@ An LLM-powered job search assistant that helps you find, apply for, and track jo
 - **Email Composition**: Generate tailored cover letters and follow-up emails
 - **Scheduling**: Schedule reminders and follow-ups for job applications
 - **Vector Search**: Semantic search across your resume and job listings
+- **Web Interface**: User-friendly web interface for managing your job search
+- **API Endpoints**: RESTful API for integration with other applications
 
 ## Installation
 
@@ -133,7 +137,17 @@ scheduler:
 
 ## Docker
 
-You can also run JobHuntGPT using Docker:
+You can run JobHuntGPT using Docker Compose:
+
+```bash
+# Start the application
+docker-compose up -d
+
+# Access the web interface at http://localhost
+# API endpoints are available at http://localhost/api
+```
+
+Or you can run just the CLI using Docker:
 
 ```bash
 # Build the Docker image
@@ -144,6 +158,16 @@ docker run -v $(pwd):/app/data jobhuntgpt run-all --resume /app/data/resume.pdf 
 ```
 
 ## Development
+
+### GitHub Codespaces
+
+This repository is configured for GitHub Codespaces. To start developing:
+
+1. Click the "Code" button on the repository page
+2. Select the "Codespaces" tab
+3. Click "Create codespace on main"
+
+This will create a development environment with all dependencies installed.
 
 ### Running Tests
 
@@ -162,6 +186,13 @@ black jobhuntgpt tests
 ```bash
 flake8 jobhuntgpt tests
 ```
+
+### API Documentation
+
+When running the application, API documentation is available at:
+
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
 
 ## License
 
