@@ -1,0 +1,40 @@
+# JobHuntGPT Configuration
+
+# API Keys
+api_keys:
+  google_calendar: "YOUR_GOOGLE_CALENDAR_API_KEY"
+  linkedin: "YOUR_LINKEDIN_API_KEY"
+  indeed: "YOUR_INDEED_API_KEY"
+
+# LLM Configuration
+llm:
+  model_path: "path/to/llama-2-7b.gguf"  # Path to your LLaMA model
+  n_ctx: 2048  # Context window size
+  n_gpu_layers: -1  # Number of layers to offload to GPU (-1 for all)
+  temperature: 0.7
+  max_tokens: 1024
+
+# Job Search Configuration
+job_search:
+  default_query: "software engineer"
+  default_location: "remote"
+  max_jobs: 100
+  sources:
+    - linkedin
+    - indeed
+    - csv
+
+# Resume Configuration
+resume:
+  path: "path/to/your/resume.pdf"
+
+# Scheduler Configuration
+scheduler:
+  follow_up_days: 7  # Days after application to follow up
+  reminder_days: 1  # Days before interview to remind
+
+# Vector Index Configuration
+vector_index:
+  embedding_model: "all-MiniLM-L6-v2"
+  chunk_size: 512
+  chunk_overlap: 50

@@ -1,0 +1,6 @@
+title,company,location,description,url,date_posted,salary,job_type
+Senior Software Engineer,Example Corp,Remote,"Looking for a senior software engineer with experience in Python, React, and Node.js. Knowledge of machine learning is a plus.",https://example.com/job1,2023-07-01,"$120,000 - $150,000",Full-time
+Data Scientist,Data Inc,New York,"Seeking a data scientist with expertise in Python, SQL, and machine learning. Experience with TensorFlow and scikit-learn is required.",https://example.com/job2,2023-07-02,"$110,000 - $140,000",Full-time
+DevOps Engineer,Tech Solutions,San Francisco,"Looking for a DevOps engineer with experience in Docker, Kubernetes, and CI/CD pipelines. Knowledge of Python is required.",https://example.com/job3,2023-07-03,"$130,000 - $160,000",Full-time
+Frontend Developer,Web Corp,Remote,"Seeking a frontend developer with expertise in React, JavaScript, and CSS. Experience with Node.js is a plus.",https://example.com/job4,2023-07-04,"$100,000 - $130,000",Full-time
+Machine Learning Engineer,AI Innovations,Seattle,"Looking for a machine learning engineer with experience in TensorFlow, PyTorch, and Python. Knowledge of NLP is a plus.",https://example.com/job5,2023-07-05,"$140,000 - $170,000",Full-time
