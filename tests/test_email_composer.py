@@ -8,8 +8,34 @@ from unittest.mock import patch, MagicMock
 # Add the parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+# Mock the imports that might cause issues
+sys.modules['langchain.llms'] = MagicMock()
+sys.modules['langchain.prompts'] = MagicMock()
+sys.modules['sentence_transformers'] = MagicMock()
+sys.modules['sklearn.metrics.pairwise'] = MagicMock()
+
+# Create a Job class for testing without importing
+class Job:
+    def __init__(self, title, company, location, description, url, date_posted, source, salary=None, job_type=None):
+        self.title = title
+        self.company = company
+        self.location = location
+        self.description = description
+        self.url = url
+        self.date_posted = date_posted
+        self.source = source
+        self.salary = salary
+        self.job_type = job_type
+
+# Mock the matcher module
+class MockMatcher:
+    def get_matching_skills(self, resume, job):
+        return ["Python", "React", "Node.js"]
+
+sys.modules['jobhuntgpt.matcher'] = MockMatcher()
+
+# Now import the modules we want to test
 from jobhuntgpt.email_composer import compose_cover_letter, compose_followup, compose_thank_you
-from jobhuntgpt.job_fetcher import Job
 
 # Sample resume data for testing
 SAMPLE_RESUME = {

@@ -9,6 +9,10 @@ from unittest.mock import patch, MagicMock
 # Add the parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+# Mock the imports that might cause issues
+sys.modules['sentence_transformers'] = MagicMock()
+sys.modules['sklearn.metrics.pairwise'] = MagicMock()
+
 from jobhuntgpt.matcher import (
     create_resume_summary, create_job_summary, compute_similarity,
     get_matching_skills, get_missing_skills

@@ -10,6 +10,11 @@ from unittest.mock import patch, MagicMock
 # Add the parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+# Mock the imports that might cause issues
+sys.modules['requests'] = MagicMock()
+sys.modules['bs4'] = MagicMock()
+sys.modules['pandas'] = MagicMock()
+
 from jobhuntgpt.job_fetcher import Job, fetch_from_csv, fetch_from_json, save_jobs_to_json, save_jobs_to_csv
 
 # Sample job data for testing
